@@ -1,0 +1,19 @@
+program DescuentoTienda;
+uses crt;
+
+var
+    totalCompra, totalPagar: Real;
+begin
+    clrscr;
+    
+    writeln('Ingrese el importe total de la compra: ');
+    readln(totalCompra);
+
+    if totalCompra >= 150 then
+        totalPagar := totalCompra * 0.90  // Aplicar 10% de descuento
+    else
+        totalPagar := totalCompra;
+
+    writeln('Total a pagar: S/.', totalPagar:0:2);
+    readln;
+end.

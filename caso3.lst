@@ -1,0 +1,141 @@
+- Pascal-FC for IBM PC compatibles - 
+- GNU Compiler Version P5.2
+
+G L Davies  &  A Burns, University of York
+
+Compiler listing
+
+    1     0 program NombreDelMes;
+    2     0 
+    3     0 
+    4     0 var
+    5     0     numeroMes: Integer;
+    6     0     meses: array[1..12] of char; 
+    7     0 
+    8     0 begin
+    9     0     
+   10     0     meses[1] := 'E';     
+   11     5     meses[2] := 'F';
+   12    10     meses[3] := 'M';     
+   13    15     meses[4] := 'A';
+   14    20     meses[5] := 'M';      
+   15    25     meses[6] := 'J';
+   16    30     meses[7] := 'J';     
+   17    35     meses[8] := 'A';
+   18    40     meses[9] := 'S'; 
+   19    45     meses[10] := 'O';
+   20    50     meses[11] := 'N'; 
+   21    55     meses[12] := 'D';
+   22    60 
+   23    60     writeln('Ingrese un número del 1 al 12: ');
+   24    63     readln(numeroMes);
+   25    66 
+   26    66     if (numeroMes >= 1) and (numeroMes <= 12) then
+   27    74         writeln('El mes es: ', meses[numeroMes])
+   28    81     else
+   29    82         writeln('Número fuera de rango. Ingrese un número entre 1 y 12.');
+   30    86 
+   31    86     readln;
+   32    87 end.
+
+
+
+Symbol table
+
+    name       link      objekt       type         ref      nrm  lev  adr  aux
+
+ 45 _main        44     procedure   notyp           2      True    0    0    0
+ 46 any           0     variable    synch           0      True    1    5    0
+ 47 numeromes    46     variable    integer         0      True    1    5    0
+ 48 meses        47     variable    array           1      True    1    6    0
+
+Generated P-code
+
+    0     ldadr        1         6          ;8
+    1     ldcon.i      0         1          ;10
+    2     ixary.i      0         1          ;10
+    3     ldcon.c      0        69          ;10
+    4     store.c      0         0          ;10
+    5     ldadr        1         6          ;10
+    6     ldcon.i      0         2          ;11
+    7     ixary.i      0         1          ;11
+    8     ldcon.c      0        70          ;11
+    9     store.c      0         0          ;11
+   10     ldadr        1         6          ;11
+   11     ldcon.i      0         3          ;12
+   12     ixary.i      0         1          ;12
+   13     ldcon.c      0        77          ;12
+   14     store.c      0         0          ;12
+   15     ldadr        1         6          ;12
+   16     ldcon.i      0         4          ;13
+   17     ixary.i      0         1          ;13
+   18     ldcon.c      0        65          ;13
+   19     store.c      0         0          ;13
+   20     ldadr        1         6          ;13
+   21     ldcon.i      0         5          ;14
+   22     ixary.i      0         1          ;14
+   23     ldcon.c      0        77          ;14
+   24     store.c      0         0          ;14
+   25     ldadr        1         6          ;14
+   26     ldcon.i      0         6          ;15
+   27     ixary.i      0         1          ;15
+   28     ldcon.c      0        74          ;15
+   29     store.c      0         0          ;15
+   30     ldadr        1         6          ;15
+   31     ldcon.i      0         7          ;16
+   32     ixary.i      0         1          ;16
+   33     ldcon.c      0        74          ;16
+   34     store.c      0         0          ;16
+   35     ldadr        1         6          ;16
+   36     ldcon.i      0         8          ;17
+   37     ixary.i      0         1          ;17
+   38     ldcon.c      0        65          ;17
+   39     store.c      0         0          ;17
+   40     ldadr        1         6          ;17
+   41     ldcon.i      0         9          ;18
+   42     ixary.i      0         1          ;18
+   43     ldcon.c      0        83          ;18
+   44     store.c      0         0          ;18
+   45     ldadr        1         6          ;18
+   46     ldcon.i      0        10          ;19
+   47     ixary.i      0         1          ;19
+   48     ldcon.c      0        79          ;19
+   49     store.c      0         0          ;19
+   50     ldadr        1         6          ;19
+   51     ldcon.i      0        11          ;20
+   52     ixary.i      0         1          ;20
+   53     ldcon.c      0        78          ;20
+   54     store.c      0         0          ;20
+   55     ldadr        1         6          ;20
+   56     ldcon.i      0        12          ;21
+   57     ixary.i      0         1          ;21
+   58     ldcon.c      0        68          ;21
+   59     store.c      0         0          ;21
+   60     ldcon.i      0        31          ;23
+   61     wrstr        0         0          ;23
+   62     wrlin        0         0          ;23
+   63     ldadr        1         5          ;24
+   64     rdinp.i      0         0          ;24
+   65     rdlin        0         0          ;24
+   66     ldval.i      1         5          ;26
+   67     ldcon.i      0         1          ;26
+   68     relge.i      0         0          ;26
+   69     ldval.i      1         5          ;26
+   70     ldcon.i      0        12          ;26
+   71     relle.i      0         0          ;26
+   72     andop.b      0         0          ;26
+   73     jmpiz        0        83          ;26
+   74     ldcon.i      0        11          ;27
+   75     wrstr        0        31          ;27
+   76     ldadr        1         6          ;27
+   77     ldval.i      1         5          ;27
+   78     ixary.i      0         1          ;27
+   79     rpadr.c      0         0          ;27
+   80     wrval.c      0         0          ;27
+   81     wrlin        0         0          ;27
+   82     jmpuc        0        86          ;27
+   83     ldcon.i      0        54          ;29
+   84     wrstr        0        42          ;29
+   85     wrlin        0         0          ;29
+   86     rdlin        0         0          ;29
+   87     stopx        0         0          ;31

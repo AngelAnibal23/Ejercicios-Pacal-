@@ -1,0 +1,85 @@
+program CajeroAutomatico;
+
+var
+    saldo, monto: real;
+    opcion: integer;
+    claveIngresada, claveCorrecta: string;
+    continuar: char;
+begin
+
+    saldo := 1000;  
+    claveCorrecta := '1234'; 
+
+    writeln('Ingrese su clave: ');
+    readln(claveIngresada);
+
+    if claveIngresada <> claveCorrecta then
+    begin
+        writeln('Clave incorrecta.');
+        readln;
+        exit;
+    end;
+
+    repeat
+        clrscr;
+        writeln('--- Menú del Cajero ---');
+        writeln('1. Extraer dinero');
+        writeln('2. Depositar dinero');
+        writeln('3. Transferir dinero');
+        writeln('4. Consultar saldo');
+        writeln('5. Salir');
+        writeln('Ingrese su opción: ');
+        readln(opcion);
+
+        case opcion of
+            1: begin
+                writeln('Ingrese monto a retirar: ');
+                readln(monto);
+                if monto > saldo then
+                    writeln('Fondos insuficientes.')
+                else
+                begin
+                    saldo := saldo - monto;
+                    writeln('Retiro exitoso.');
+                end;
+            end;
+            2: begin
+                writeln('Ingrese monto a depositar: ');
+                readln(monto);
+                saldo := saldo + monto;
+                writeln('Depósito exitoso.');
+            end;
+            3: begin
+                writeln('Ingrese monto a transferir: ');
+                readln(monto);
+                if monto > saldo then
+                    writeln('Fondos insuficientes.')
+                else
+                begin
+                    saldo := saldo - monto;
+                    writeln('Transferencia exitosa.');
+                end;
+            end;
+            4: begin
+                writeln('Saldo actual: S/.', saldo:0:2);
+            end;
+            5: begin
+                writeln('Gracias por usar el cajero.');
+                exit;
+            end;
+        else
+            writeln('Opción inválida.');
+        end;
+
+        writeln('Desea ver el resumen de su saldo? (S/N)');
+        readln(continuar);
+        if (continuar = 'S') or (continuar = 's') then
+            writeln('Saldo actual: S/.', saldo:0:2);
+
+        writeln('Desea realizar otra operación? (S/N)');
+        readln(continuar);
+    until (continuar = 'N') or (continuar = 'n');
+
+    writeln('Gracias por usar el cajero.');
+    readln;
+end.

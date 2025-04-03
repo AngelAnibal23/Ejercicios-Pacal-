@@ -1,0 +1,13 @@
+program MultiplosDe7;
+
+var
+    i: Integer;
+begin
+
+    writeln('Multiplos de 7 entre 1 y 100:');
+    for i := 7 to 100 do
+        if i mod 7 = 0 then
+            writeln(i);
+
+    readln;
+end.

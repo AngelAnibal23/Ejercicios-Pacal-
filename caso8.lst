@@ -1,0 +1,77 @@
+- Pascal-FC for IBM PC compatibles - 
+- GNU Compiler Version P5.2
+
+G L Davies  &  A Burns, University of York
+
+Compiler listing
+
+    1     0 program OrdenDecreciente;
+    2     0 
+    3     0 var
+    4     0     num1, num2, num3: Integer;
+    5     0 begin
+    6     0 
+    7     0     writeln('Ingrese el primer número: ');
+    8     3     readln(num1);
+    9     6     writeln('Ingrese el segundo número: ');
+   10     9     readln(num2);
+   11    12     writeln('Ingrese el tercer número: ');
+   12    15     readln(num3);
+   13    18 
+   14    18     if (num1 > num2) and (num2 > num3) then
+   15    26         writeln('Los números están en orden decreciente.')
+   16    28     else
+   17    29         writeln('Los números NO están en orden decreciente.');
+   18    33 
+   19    33     readln;
+   20    34 end.
+
+
+
+Symbol table
+
+    name       link      objekt       type         ref      nrm  lev  adr  aux
+
+ 45 _main        44     procedure   notyp           2      True    0    0    0
+ 46 any           0     variable    synch           0      True    1    5    0
+ 47 num1         46     variable    integer         0      True    1    5    0
+ 48 num2         47     variable    integer         0      True    1    6    0
+ 49 num3         48     variable    integer         0      True    1    7    0
+
+Generated P-code
+
+    0     ldcon.i      0        26          ;7
+    1     wrstr        0         0          ;7
+    2     wrlin        0         0          ;7
+    3     ldadr        1         5          ;8
+    4     rdinp.i      0         0          ;8
+    5     rdlin        0         0          ;8
+    6     ldcon.i      0        27          ;9
+    7     wrstr        0        26          ;9
+    8     wrlin        0         0          ;9
+    9     ldadr        1         6          ;10
+   10     rdinp.i      0         0          ;10
+   11     rdlin        0         0          ;10
+   12     ldcon.i      0        26          ;11
+   13     wrstr        0        53          ;11
+   14     wrlin        0         0          ;11
+   15     ldadr        1         7          ;12
+   16     rdinp.i      0         0          ;12
+   17     rdlin        0         0          ;12
+   18     ldval.i      1         5          ;14
+   19     ldval.i      1         6          ;14
+   20     relgt.i      0         0          ;14
+   21     ldval.i      1         6          ;14
+   22     ldval.i      1         7          ;14
+   23     relgt.i      0         0          ;14
+   24     andop.b      0         0          ;14
+   25     jmpiz        0        30          ;14
+   26     ldcon.i      0        39          ;15
+   27     wrstr        0        79          ;15
+   28     wrlin        0         0          ;15
+   29     jmpuc        0        33          ;15
+   30     ldcon.i      0        42          ;17
+   31     wrstr        0       118          ;17
+   32     wrlin        0         0          ;17
+   33     rdlin        0         0          ;17
+   34     stopx        0         0          ;19

@@ -1,0 +1,32 @@
+program NombreDelMes;
+
+
+var
+    numeroMes: Integer;
+    meses: array[1..12] of char; 
+
+begin
+    
+    meses[1] := 'E';     
+    meses[2] := 'F';
+    meses[3] := 'M';     
+    meses[4] := 'A';
+    meses[5] := 'M';      
+    meses[6] := 'J';
+    meses[7] := 'J';     
+    meses[8] := 'A';
+    meses[9] := 'S'; 
+    meses[10] := 'O';
+    meses[11] := 'N'; 
+    meses[12] := 'D';
+
+    writeln('Ingrese un número del 1 al 12: ');
+    readln(numeroMes);
+
+    if (numeroMes >= 1) and (numeroMes <= 12) then
+        writeln('El mes es: ', meses[numeroMes])
+    else
+        writeln('Número fuera de rango. Ingrese un número entre 1 y 12.');
+
+    readln;
+end.

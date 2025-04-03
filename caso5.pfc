@@ -1,0 +1,22 @@
+program DiaSemana;
+
+var
+    numero: Integer;
+    dias: array[1..7] of char;
+begin
+    
+    dias[1] := 'D';   dias[2] := 'L';
+    dias[3] := 'M'; dias[4] := 'M';
+    dias[5] := 'J';  dias[6] := 'V';
+    dias[7] := 'S';
+
+    writeln('Ingrese un número del 1 al 7: ');
+    readln(numero);
+
+    if (numero >= 1) and (numero <= 7) then
+        writeln('Día de la semana: ', dias[numero])
+    else
+        writeln('Número inválido. Ingrese un número entre 1 y 7.');
+
+    readln;
+end.

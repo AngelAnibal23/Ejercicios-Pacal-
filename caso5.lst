@@ -1,0 +1,106 @@
+- Pascal-FC for IBM PC compatibles - 
+- GNU Compiler Version P5.2
+
+G L Davies  &  A Burns, University of York
+
+Compiler listing
+
+    1     0 program DiaSemana;
+    2     0 
+    3     0 var
+    4     0     numero: Integer;
+    5     0     dias: array[1..7] of char;
+    6     0 begin
+    7     0     
+    8     0     dias[1] := 'D';   dias[2] := 'L';
+    9    10     dias[3] := 'M'; dias[4] := 'M';
+   10    20     dias[5] := 'J';  dias[6] := 'V';
+   11    30     dias[7] := 'S';
+   12    35 
+   13    35     writeln('Ingrese un número del 1 al 7: ');
+   14    38     readln(numero);
+   15    41 
+   16    41     if (numero >= 1) and (numero <= 7) then
+   17    49         writeln('Día de la semana: ', dias[numero])
+   18    56     else
+   19    57         writeln('Número inválido. Ingrese un número entre 1 y 7.');
+   20    61 
+   21    61     readln;
+   22    62 end.
+
+
+
+Symbol table
+
+    name       link      objekt       type         ref      nrm  lev  adr  aux
+
+ 45 _main        44     procedure   notyp           2      True    0    0    0
+ 46 any           0     variable    synch           0      True    1    5    0
+ 47 numero       46     variable    integer         0      True    1    5    0
+ 48 dias         47     variable    array           1      True    1    6    0
+
+Generated P-code
+
+    0     ldadr        1         6          ;6
+    1     ldcon.i      0         1          ;8
+    2     ixary.i      0         1          ;8
+    3     ldcon.c      0        68          ;8
+    4     store.c      0         0          ;8
+    5     ldadr        1         6          ;8
+    6     ldcon.i      0         2          ;8
+    7     ixary.i      0         1          ;8
+    8     ldcon.c      0        76          ;8
+    9     store.c      0         0          ;8
+   10     ldadr        1         6          ;8
+   11     ldcon.i      0         3          ;9
+   12     ixary.i      0         1          ;9
+   13     ldcon.c      0        77          ;9
+   14     store.c      0         0          ;9
+   15     ldadr        1         6          ;9
+   16     ldcon.i      0         4          ;9
+   17     ixary.i      0         1          ;9
+   18     ldcon.c      0        77          ;9
+   19     store.c      0         0          ;9
+   20     ldadr        1         6          ;9
+   21     ldcon.i      0         5          ;10
+   22     ixary.i      0         1          ;10
+   23     ldcon.c      0        74          ;10
+   24     store.c      0         0          ;10
+   25     ldadr        1         6          ;10
+   26     ldcon.i      0         6          ;10
+   27     ixary.i      0         1          ;10
+   28     ldcon.c      0        86          ;10
+   29     store.c      0         0          ;10
+   30     ldadr        1         6          ;10
+   31     ldcon.i      0         7          ;11
+   32     ixary.i      0         1          ;11
+   33     ldcon.c      0        83          ;11
+   34     store.c      0         0          ;11
+   35     ldcon.i      0        30          ;13
+   36     wrstr        0         0          ;13
+   37     wrlin        0         0          ;13
+   38     ldadr        1         5          ;14
+   39     rdinp.i      0         0          ;14
+   40     rdlin        0         0          ;14
+   41     ldval.i      1         5          ;16
+   42     ldcon.i      0         1          ;16
+   43     relge.i      0         0          ;16
+   44     ldval.i      1         5          ;16
+   45     ldcon.i      0         7          ;16
+   46     relle.i      0         0          ;16
+   47     andop.b      0         0          ;16
+   48     jmpiz        0        58          ;16
+   49     ldcon.i      0        18          ;17
+   50     wrstr        0        30          ;17
+   51     ldadr        1         6          ;17
+   52     ldval.i      1         5          ;17
+   53     ixary.i      0         1          ;17
+   54     rpadr.c      0         0          ;17
+   55     wrval.c      0         0          ;17
+   56     wrlin        0         0          ;17
+   57     jmpuc        0        61          ;17
+   58     ldcon.i      0        47          ;19
+   59     wrstr        0        48          ;19
+   60     wrlin        0         0          ;19
+   61     rdlin        0         0          ;19
+   62     stopx        0         0          ;21
